@@ -6,6 +6,7 @@ public class MapContainerUI : MonoBehaviour {
     public GameObject placeholderPrefab;
     public float cellSize;
     private RectTransform rectTransform;
+    private MapData mapData;
     void Start() {
         rectTransform = GetComponent<RectTransform>();
     }
