@@ -2,11 +2,12 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UIElements;
 
-public class MapContainerUI : MonoBehaviour {
+public class RoomContainerUI : MonoBehaviour {
     public GameObject placeholderPrefab;
     public float cellSize;
     private RectTransform rectTransform;
     private MapData mapData;
+    public int id = 0;
     void Start() {
         rectTransform = GetComponent<RectTransform>();
         mapData = new MapData();
@@ -31,8 +32,8 @@ public class MapContainerUI : MonoBehaviour {
         int x = (int)(placeholder.rectTransform.anchoredPosition.x / cellSize);
         int y = (int)(placeholder.rectTransform.anchoredPosition.y / cellSize);
         Debug.Log("trying to add to " + x + " " + y);
-        if(mapData.Occupied(x, y)) return false;
-        mapData.AddThing(mapThing, x, y);
+        if(mapData.Occupied(id, x, y)) return false;
+        mapData.AddThing(mapThing, id, x, y);
         return true;
     }
 }

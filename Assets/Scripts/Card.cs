@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
-    public MapContainerUI mapContainerUI;
+    public MapCreator mapContainerUI;
     public Color color;
     private Placeholder mapPlaceholder;
     protected Vector2 startPosition;
@@ -23,7 +23,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                             data.position.y > mapRectTransform.anchoredPosition.y &&
                             data.position.y < mapRectTransform.anchoredPosition.y + mapRectTransform.rect.height;
         if(isAboveMap && mapPlaceholder is null) {
-            mapPlaceholder = mapContainerUI.CreatePlaceholder(color, data.position);
+            mapPlaceholder = mapContainerUI.roomContainers[mapContainerUI.activeId].CreatePlaceholder(color, data.position);
             GetComponent<Image>().color = new Color(0,0,0,0);
         }
         if(!isAboveMap && !(mapPlaceholder is null)) {
@@ -33,14 +33,14 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         }
         GetComponent<RectTransform>().anchoredPosition = data.position;
         if(mapPlaceholder is null) { return; }
-        mapContainerUI.SetPlaceholderPosition(mapPlaceholder, data.position);
+        mapContainerUI.roomContainers[mapContainerUI.activeId].SetPlaceholderPosition(mapPlaceholder, data.position);
     }
 
     public void OnEndDrag(PointerEventData eventData) {
         if(mapPlaceholder is null) {
             GetComponent<RectTransform>().anchoredPosition = startPosition;
         } else {
-            if(mapContainerUI.Submit(mapPlaceholder, mapThing)) {
+            if(mapContainerUI.roomContainers[mapContainerUI.activeId].Submit(mapPlaceholder, mapThing)) {
                 Destroy(gameObject);
             } else {
                 Destroy(mapPlaceholder.gameObject);

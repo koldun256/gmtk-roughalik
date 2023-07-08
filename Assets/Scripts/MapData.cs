@@ -14,13 +14,13 @@ public class Loot : MapThing {}
 public class HealingPotion : Loot {}
 
 public class MapData {
-    private MapThing[,] mapData;
+    private MapThing[,,] mapData;
     public MapData() {
         mapData = new MapThing[3,6,6];
         for(int i = 0; i < 3; i++) {
             for(int x = 0; x < 6; x++) {
                 for(int y = 0; y < 6; y++) {
-                    mapData[x, y] = new Empty();
+                    mapData[i, x, y] = new Empty();
                 }
             }
         }
