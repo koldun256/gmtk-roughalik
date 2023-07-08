@@ -9,6 +9,7 @@ public class MapContainerUI : MonoBehaviour {
     private MapData mapData;
     void Start() {
         rectTransform = GetComponent<RectTransform>();
+        mapData = new MapData();
     }
     private Vector2 TranslatePosition(Vector2 screenPosition) {
         return screenPosition - rectTransform.anchoredPosition;
@@ -26,7 +27,12 @@ public class MapContainerUI : MonoBehaviour {
             mapPosition.y - (mapPosition.y % cellSize)
         ));
     }
-    public void Submit(Placeholder placeholder) {
-        Debug.Log("submit");
+    public bool Submit(Placeholder placeholder, MapThing mapThing) {
+        int x = (int)(placeholder.rectTransform.anchoredPosition.x / cellSize);
+        int y = (int)(placeholder.rectTransform.anchoredPosition.y / cellSize);
+        Debug.Log("trying to add to " + x + " " + y);
+        if(mapData.Occupied(x, y)) return false;
+        mapData.AddThing(mapThing, x, y);
+        return true;
     }
 }

@@ -6,7 +6,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public MapContainerUI mapContainerUI;
     public Color color;
     private Placeholder mapPlaceholder;
-    private Vector2 startPosition;
+    protected Vector2 startPosition;
+    protected MapThing mapThing;
     void Start() {
         startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
@@ -39,8 +40,14 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if(mapPlaceholder is null) {
             GetComponent<RectTransform>().anchoredPosition = startPosition;
         } else {
-            mapContainerUI.Submit(mapPlaceholder);
-            Destroy(gameObject);
+            if(mapContainerUI.Submit(mapPlaceholder, mapThing)) {
+                Destroy(gameObject);
+            } else {
+                Destroy(mapPlaceholder.gameObject);
+                mapPlaceholder = null;
+                GetComponent<Image>().color = color;
+                GetComponent<RectTransform>().anchoredPosition = startPosition;
+            }
         }
         
     }

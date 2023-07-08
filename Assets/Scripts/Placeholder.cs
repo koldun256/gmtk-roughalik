@@ -6,7 +6,7 @@ using static UnityEngine.UI.Image;
 public class Placeholder : MonoBehaviour
 {
     public UnityEngine.UI.Image image;
-    private RectTransform rectTransform;
+    public RectTransform rectTransform;
     void Start() {
         rectTransform = GetComponent<RectTransform>();
     }
