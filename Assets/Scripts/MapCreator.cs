@@ -27,6 +27,6 @@ public class MapCreator : MonoBehaviour {
     }
     private void SetPosition() {
         rectTransform.anchorMin = new Vector2(-activeId, 0);
-        rectTransform.anchorMax = new Vector2(-activeId, 0);
+        rectTransform.anchorMax = new Vector2(3-activeId, 1);
     }
 }
