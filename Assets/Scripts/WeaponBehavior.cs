@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public class WeaponBehavior : MonoBehaviour
-{   
+{
     public void Attack(GameObject target){
         Debug.Log("JOPA");
     }
