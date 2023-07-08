@@ -10,58 +10,81 @@ class MoveDecision : Decision {
         this.target = target;
     }
     void Do(Player self, Room room) {
-    
+        self.transform.position = Vector2.MoveTowards(self.transform.position, target, self.speed*Time.deltaTime)
     }
 }
 class AttackDecision : Decision {
     public GameObject target;
     public AttackDecision(GameObject target){
-        this.target = target
+        this.target = target;
     }
-    void Do(Player self, PlayerWeapon playerWeapon, Room room){
-    
+    void Do(Player self, Room room){
+        self.weapon.Attack(target);
     }
 }
-class
+class LootDecision : Decision {
+    public GameObject target;
+    public AttackDecision(GameObject target){
+        this.target = target;
+    }
+    void Do(Player self, GameObject target, Room room){
+    //TODO
+    }
+}
 public class Player : MonoBehaviour
 {
     public GameObject room;
-    public class PlayerWeapon{
-        public 
+    private WeaponBehaviour weapon;
+    public float speed = 1;
+    void Start() {
+        weapon = GetComponent<WeaponBehaviour>();
     }
-    Decision makeDesicion(){
-        boolean enemyFlag = false;
-        boolean lootFlag = false;
-        foreach(var child in room.transform){
-            if(child.tag == "Enemy"){
-                enemyFlag = true;
-                return new MoveDecision();
-                break;
-            }
-            else if(child.tag == "Loot"){
-                lootFlag = true
-                break;
-            }
-        }
-        return("Exit")
-
+    private void ChangeWeapon(WeaponBehaviour newWeapon) {
+        Destroy(weapon);
+        weapon = newWeapon;
     }
-    void Update()
-    {
-        makeDesicion().Do();
-        Transform targetEnemy = null;
-        float distanceToTargetEnemy = 99999.9;
+    Decision makeDecision(){
+        GameObject target = null;
+        float distanceToTarget = 99999f;
         foreach(var child in room.transform){
            if(child.tag=="Enemy"){
-               var distance = Vector2.Distance(gameObject.transform.position, child.transform.position)
-               if(distanceToTargetEnemy>distance){
-                    targetEnemy = child;
-                    distanceToTargetEnemy = distance;
-                    enemiesOnBattlefield = true;
+               var distance = Vector2.Distance(gameObject.transform.position, child.transform.position);
+               if(distanceToTarget>distance){
+                    target = child;
+                    distanceToTarget = distance;
                }
            }
         }
-        if enemiesOnBattlefield
-        if distanceToTargetEnemy<
+        if(distanceToTarget != 99999f){
+            if(Vector2.Distance(gameObject.transform.position, child.transform.position) <= weapon.range){
+                return new AttackDecision();
+            }
+            else{
+                return new MoveDecision(target.position);
+            }    
+        }
+        foreach(var child in room.transform){
+           if(child.tag=="Loot"){
+               var distance = Vector2.Distance(gameObject.transform.position, child.transform.position);
+               if(distanceToTarget>distance){
+                    target = child;
+                    distanceToTarget = distance;
+               }
+           }
+        }
+        if(distanceToTarget != 99999f){
+            if(Vector2.Distance(gameObject.transform.position, child.transform.position) <= 0.5f){
+                return new LootDecision();
+            }
+            else{
+                return new MoveDecision(target.position);
+            }
+        }
+        return new MoveDecision(new Vector2(7f, 3.5f));
+    }
+
+    void Update()
+    {
+        makeDesicion().Do();
     }
 }
