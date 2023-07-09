@@ -10,6 +10,7 @@ public class RoomManager : MonoBehaviour {
     public GameObject player;
 
     public void SetRoom(int id) {
+        Debug.Log(id);
         if(id == 3) SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex );
         foreach(Room room in rooms) {
             room.gameObject.SetActive(false);

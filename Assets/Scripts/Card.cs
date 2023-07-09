@@ -38,7 +38,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         if(!isAboveMap && !(mapPlaceholder is null)) {
             Destroy(mapPlaceholder.gameObject);
             mapPlaceholder = null;
-            GetComponent<Image>().color = color;
+            GetComponent<Image>().color = Color.white;
 
         }
         GetComponent<RectTransform>().anchoredPosition = data.position;
