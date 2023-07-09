@@ -5,9 +5,9 @@ using UnityEngine;
 public class SpiderWeaponBehaviour : WeaponBehaviour
 {
     public float lastAttackTime = 0f;
-    public float attackDelay = 1f;
     public void SetData(SpiderWeapon spiderWeapon)
     {
+        attackDelay = 1f;
         damage = spiderWeapon.damage; range = spiderWeapon.range;
     }
 

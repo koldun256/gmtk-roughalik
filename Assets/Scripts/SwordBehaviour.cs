@@ -5,8 +5,8 @@ using UnityEngine;
 public class SwordBehaviour : WeaponBehaviour
 {
     public float lastAttackTime = 0f;
-    public float attackDelay = 0.5f;
     public void SetData(Sword sword) { 
+        attackDelay = 0.5f;
         damage = sword.damage; range = sword.range;
     }
     public override void Attack(GameObject target) {
