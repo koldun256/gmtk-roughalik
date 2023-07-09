@@ -8,20 +8,25 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     private Placeholder mapPlaceholder;
     protected Vector2 startPosition;
     protected MapThing mapThing;
+    public Transform originalParent;
+    public Transform canvas;
+
     void Start() {
         startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
     public void OnBeginDrag(PointerEventData eventData) {
-        Debug.Log("begin drag");
+        gameObject.transform.parent = canvas;
+        GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
+        GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
     }
 
     public void OnDrag(PointerEventData data) {
         RectTransform rectTransform = GetComponent<RectTransform>();
-        RectTransform mapRectTransform = mapContainerUI.gameObject.GetComponent<RectTransform>();
-        bool isAboveMap =   data.position.x > mapRectTransform.anchoredPosition.x &&
-                            data.position.x < mapRectTransform.anchoredPosition.x + mapRectTransform.rect.width &&
-                            data.position.y > mapRectTransform.anchoredPosition.y &&
-                            data.position.y < mapRectTransform.anchoredPosition.y + mapRectTransform.rect.height;
+        Vector3[] corners = mapContainerUI.roomContainers[mapContainerUI.activeId].GetCorners();
+        bool isAboveMap =   data.position.x > corners[0].x &&
+                            data.position.x < corners[2].x &&
+                            data.position.y > corners[0].y &&
+                            data.position.y < corners[2].y;
         if(isAboveMap && mapPlaceholder is null) {
             mapPlaceholder = mapContainerUI.roomContainers[mapContainerUI.activeId].CreatePlaceholder(color, data.position);
             GetComponent<Image>().color = new Color(0,0,0,0);
@@ -30,6 +35,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
             Destroy(mapPlaceholder.gameObject);
             mapPlaceholder = null;
             GetComponent<Image>().color = color;
+
         }
         GetComponent<RectTransform>().anchoredPosition = data.position;
         if(mapPlaceholder is null) { return; }
@@ -49,6 +55,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
                 GetComponent<RectTransform>().anchoredPosition = startPosition;
             }
         }
-        
+        gameObject.transform.parent = originalParent;
+        transform.parent.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(true);
     }
 }
