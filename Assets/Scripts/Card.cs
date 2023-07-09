@@ -11,6 +11,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     protected MapThing mapThing;
     public Transform originalParent;
     public Transform canvas;
+    public int moneyCost;
 
     void Awake() {
         startPosition = GetComponent<RectTransform>().anchoredPosition;
@@ -23,7 +24,6 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
         GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
     }
-
     public void OnDrag(PointerEventData data) {
         RectTransform rectTransform = GetComponent<RectTransform>();
         Vector3[] corners = mapContainerUI.roomContainers[mapContainerUI.activeId].GetCorners();
@@ -47,7 +47,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        if(mapPlaceholder is null) {
+        if(mapPlaceholder is null){
             GetComponent<RectTransform>().anchoredPosition = startPosition;
         } else {
             if(mapContainerUI.roomContainers[mapContainerUI.activeId].Submit(mapPlaceholder, mapThing)) {

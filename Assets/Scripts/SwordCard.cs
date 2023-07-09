@@ -7,6 +7,7 @@ public class SwordCard : Card
     void Start()
     {
         mapThing = new Sword();
+        mapThing.moneyCost = -1;
         startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

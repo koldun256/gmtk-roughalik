@@ -5,7 +5,9 @@ class MapBuilder : MonoBehaviour {
     public GameObject slime;
     public GameObject spear;
     public GameObject goblin;
+    public GameObject golem;
     public GameObject spider;
+    public GameObject bat;
     public GameObject healingPotion;
     public Room[] room;
     public void CreateMap(MapData mapData) {
@@ -19,9 +21,12 @@ class MapBuilder : MonoBehaviour {
                         newThing = Instantiate(sword);
                     }
                     else if (a is Spear){
-                        newThing = Instantiate(sword);
+                        newThing = Instantiate(spear);
                     }
-                    if (a is Spider){
+                    else if (a is Golem){
+                        newThing = Instantiate(golem);
+                    }
+                    else if (a is Spider){
                         newThing = Instantiate(spider);
                     }
                     else if (a is Goblin){

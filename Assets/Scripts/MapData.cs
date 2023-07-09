@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
-public class MapThing {}
+public class MapThing {
+    public int moneyCost;
+}
 public class Weapon : MapThing {
     public int damage;
     public float range;
@@ -11,25 +13,13 @@ public class Empty : MapThing {}
 public class Sword : Weapon {
     public new int damage;
     public new float range = 1f;
-    public Sword(int damage){
-        this.damage = damage;
-    }
-    public Sword(){
-        this.damage = 75;
-    }
 }
 public class Spear : Weapon {
     public new int damage;
     public new float range = 2f;
-    public Spear(int damage) { 
-        this.damage = damage;
-    }
-    public Spear(){
-        this.damage = 75;
-    }
 }
 public class SlimeWeapon: Weapon{
-    public new int damage;
+    public int damage;
     public new float range = 1f;
     public SlimeWeapon(int damage){
         this.damage = damage;
@@ -39,7 +29,7 @@ public class SlimeWeapon: Weapon{
     }
 }
 public class SpiderWeapon : Weapon{
-    public new int damage;
+    public int damage;
     public new float range = 1f;
     public SpiderWeapon(int damage)
     {
@@ -57,33 +47,30 @@ public class Enemy : MapThing{
 }
 public class Golem : Enemy
 {
-    public new Weapon weapon = new Sword(120);
     public new int maxHealth = 300;
     public new float attackTime = 5f;
 }
 public class Bat : Enemy
 {
-    public new Weapon weapon = new Sword(30);
     public new int maxHealth = 50;
     public new float attackTime = 0.5f;
 }
     public class Goblin : Enemy {
     public new int maxHealth = 70;
-    public new Weapon weapon = new Spear(40);
     public new float attackTime = 0.5f;
 }
 public class Slime : Enemy {
     public new int maxHealth = 40;
-    public new Weapon weapon = new SlimeWeapon();
     public new float attackTime = 1f;
 }
 public class Spider : Enemy {
     public new int maxHealth = 90;
-    public new Weapon weapon = new Spear(20);
     public new float attackTime = 0.5f;
 }
 
-public class Loot : MapThing {}
+public class Loot : MapThing {
+    public int moneyCost;
+}
 public class HealingPotion : Loot {}
 
 

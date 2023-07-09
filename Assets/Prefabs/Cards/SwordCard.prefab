@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3056508246973113211}
   - component: {fileID: 7480940382883076100}
   - component: {fileID: 8510803259885732523}
-  - component: {fileID: 211091203324763550}
   - component: {fileID: 7553611849421282354}
+  - component: {fileID: 2422387711647323906}
   m_Layer: 5
   m_Name: SwordCard
   m_TagString: Untagged
@@ -78,21 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &211091203324763550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7558083322191893626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c84f561a77e48748a5fa4941a05ed41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0.87058824, a: 1}
-  originalParent: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!114 &7553611849421282354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,3 +92,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &2422387711647323906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558083322191893626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e648d15f087a83d4facca91d669aa27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0, b: 0.8666667, a: 1}
+  originalParent: {fileID: 0}
+  canvas: {fileID: 0}
+  moneyCost: 0
+  moneyCost: 0

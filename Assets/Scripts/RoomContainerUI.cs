@@ -42,6 +42,8 @@ public class RoomContainerUI : MonoBehaviour {
         Debug.Log("trying to add to " + x + " " + y);
         if(mapData.Occupied(id, x, y)) return false;
         mapData.AddThing(mapThing, id, x, y);
+        Debug.Log(mapThing);
+        Debug.Log(MetaMoney.CalculateMoney(mapData));
         return true;
     }
 }
