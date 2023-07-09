@@ -13,6 +13,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void Attack(GameObject target)
     {
-        target.health = target.health - damage;
+        target.GetComponent<Health>().DoDamage(damage);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordBehaviour : MonoBehaviour
+public class SwordBehaviour : WeaponBehaviour
 {
     public int damage;
     public float range;
@@ -11,6 +11,6 @@ public class SwordBehaviour : MonoBehaviour
     }
 
     public void Attack(GameObject target){
-        target.health = target.health - damage;
+        target.GetComponent<Health>().DoDamage(damage);
     }
 }

@@ -10,7 +10,7 @@ class MoveDecision : Decision {
         this.target = target;
     }
     public void Do(Player self, Room room) {
-        self.transform.position = Vector2.MoveTowards(self.transform.position, target, self.speed*Time.deltaTime);
+        self.transform.position = Vector2.MoveTowards(self.transform.position, target, self.speed * Time.deltaTime);
     }
 }
 class AttackDecision : Decision {
@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
     void Start() {
         weapon = GetComponent<WeaponBehaviour>();
     }
-
     private void ChangeWeapon(WeaponBehaviour newWeapon) {
         Destroy(weapon);
         weapon = newWeapon;
