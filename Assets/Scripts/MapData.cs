@@ -55,7 +55,19 @@ public class Enemy : MapThing{
     public int maxHealth;
     public float attackTime;
 }
-public class Goblin : Enemy {
+public class Golem : Enemy
+{
+    public new Weapon weapon = new Sword(120);
+    public new int maxHealth = 300;
+    public new float attackTime = 5f;
+}
+public class Bat : Enemy
+{
+    public new Weapon weapon = new Sword(30);
+    public new int maxHealth = 50;
+    public new float attackTime = 0.5f;
+}
+    public class Goblin : Enemy {
     public new int maxHealth = 70;
     public new Weapon weapon = new Spear(40);
     public new float attackTime = 0.5f;
@@ -66,10 +78,11 @@ public class Slime : Enemy {
     public new float attackTime = 1f;
 }
 public class Spider : Enemy {
-    public new int maxHealth = 70;
-    public new Weapon weapon = new SpiderWeapon();
-    public new float attackTime = 1f;
+    public new int maxHealth = 90;
+    public new Weapon weapon = new Spear(20);
+    public new float attackTime = 0.5f;
 }
+
 public class Loot : MapThing {}
 public class HealingPotion : Loot {}
 

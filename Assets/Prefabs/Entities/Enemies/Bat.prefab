@@ -10,8 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 645322781602845969}
   - component: {fileID: 3762690844084134804}
+  - component: {fileID: 3750671340720363002}
+  - component: {fileID: -4377637169809005633}
+  - component: {fileID: 8417005217248511323}
   m_Layer: 0
-  m_Name: flyingBat
+  m_Name: Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,3 +87,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3750671340720363002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1120e357676474382af12bd8aa00e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  room: {fileID: 0}
+  weapon: {fileID: 8417005217248511323}
+--- !u!114 &-4377637169809005633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860b9230db89dd4c9aa9de838332f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 90
+--- !u!114 &8417005217248511323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10300666c35e8c64dadeeddc33625c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 23
+  range: 1
+  lastAttackTime: 0.75
+  attackDelay: 0.5

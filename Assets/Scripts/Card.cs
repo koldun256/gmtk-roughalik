@@ -1,9 +1,10 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
-    public MapCreator mapContainerUI;
+    protected MapCreator mapContainerUI;
     public Color color;
     private Placeholder mapPlaceholder;
     protected Vector2 startPosition;
@@ -11,8 +12,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Transform originalParent;
     public Transform canvas;
 
-    void Start() {
+    void Awake() {
         startPosition = GetComponent<RectTransform>().anchoredPosition;
+        mapContainerUI = GameObject.Find("map_creator").GetComponent<MapCreator>();
+        originalParent = transform.parent;
+        canvas = GameObject.Find("Canvas").transform;
     }
     public void OnBeginDrag(PointerEventData eventData) {
         gameObject.transform.parent = canvas;

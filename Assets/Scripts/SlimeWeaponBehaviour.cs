@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SlimeWeaponBehaviour : WeaponBehaviour
 {
-    public int damage;
-    public float range;
+    public float lastAttackTime = 0f;
+    public float attackDelay = 0.5f;
     public void SetData(SlimeWeapon slimeWepon)
     {
         damage = slimeWepon.damage; range = slimeWepon.range;
@@ -13,6 +13,10 @@ public class SlimeWeaponBehaviour : WeaponBehaviour
 
     public void Attack(GameObject target)
     {
-        target.GetComponent<Health>().DoDamage(damage);
+        if (Time.time - lastAttackTime >= attackDelay)
+        {
+            lastAttackTime = Time.time;
+            target.GetComponent<Health>().DoDamage(damage);
+        }
     }
 }

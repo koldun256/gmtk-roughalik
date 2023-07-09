@@ -3,16 +3,11 @@ using UnityEngine;
 class MapBuilder : MonoBehaviour {
     public GameObject sword;
     public GameObject slime;
+    public GameObject spear;
     public GameObject goblin;
+    public GameObject spider;
     public GameObject healingPotion;
     public Room[] room;
-    void Start(){
-        MapData fakemapdata = new MapData();
-        fakemapdata.AddThing(new Slime(),0,0,0);
-        fakemapdata.AddThing(new Slime(),0,1,0);
-        fakemapdata.AddThing(new Slime(),0,5,5);
-        CreateMap(fakemapdata);
-    }
     public void CreateMap(MapData mapData) {
         for (int i = 0;i < 3; i++){
             for (int l = 0;l < 6; l++){
@@ -22,6 +17,12 @@ class MapBuilder : MonoBehaviour {
                     GameObject newThing = null;
                     if (a is Sword){
                         newThing = Instantiate(sword);
+                    }
+                    else if (a is Spear){
+                        newThing = Instantiate(sword);
+                    }
+                    if (a is Spider){
+                        newThing = Instantiate(spider);
                     }
                     else if (a is Goblin){
                         newThing = Instantiate(goblin);
