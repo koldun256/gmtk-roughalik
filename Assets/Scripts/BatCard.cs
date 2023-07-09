@@ -8,6 +8,5 @@ public class BatCard : Card
     {
         mapThing = new Bat();
         mapThing.moneyCost = 2;
-        startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

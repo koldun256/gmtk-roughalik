@@ -15,6 +15,5 @@ public class SpearCard : Card
         spear.attackTime = attackTime;
         mapThing = spear;
         mapThing.moneyCost = -2;
-        startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

@@ -64,4 +64,7 @@ public class MapData {
     public void AddThing(MapThing thing, int i, int x, int y) {
         mapData[i, x, y] = thing;
     }
+    public void RemoveThing(int i, int x, int y) {
+        mapData[i, x, y] = new Empty();
+    }
 }

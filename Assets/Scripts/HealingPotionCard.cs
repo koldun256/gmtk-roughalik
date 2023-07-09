@@ -9,6 +9,5 @@ public class HealingPotionCard : Card
     {
         mapThing = new HealingPotion();
         mapThing.moneyCost = -2;
-        startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

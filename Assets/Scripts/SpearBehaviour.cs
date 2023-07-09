@@ -15,6 +15,7 @@ public class SpearBehaviour : WeaponBehaviour
 
     public override void Attack(GameObject target)
     {
+        Debug.Log("wow vilka is working");
         if (Time.time - lastAttackTime >= attackDelay)
         {
             lastAttackTime = Time.time;
