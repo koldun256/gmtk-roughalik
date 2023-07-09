@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 645322781602845969}
   - component: {fileID: 3762690844084134804}
+  - component: {fileID: 6654585493319073196}
+  - component: {fileID: 6366446553012235997}
+  - component: {fileID: 8914101054428870163}
   m_Layer: 0
   m_Name: spider
   m_TagString: Enemy
@@ -84,3 +87,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6654585493319073196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1120e357676474382af12bd8aa00e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  room: {fileID: 0}
+  weapon: {fileID: 0}
+--- !u!114 &6366446553012235997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860b9230db89dd4c9aa9de838332f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 90
+--- !u!114 &8914101054428870163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b45cfb1196deff54abb8f37abf080d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  range: 1

@@ -364,7 +364,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sword: {fileID: 4156208400234835991, guid: 8c10fa07fe7c07e40b81faff2224bf3c, type: 3}
   slime: {fileID: 4156208400234835991, guid: 81476c99c05ab9e458e2d6e5a8ba541f, type: 3}
+  spear: {fileID: 0}
   goblin: {fileID: 8077613779857215235, guid: ec4533de17cf7a54b903eb8a34da9bdd, type: 3}
+  spider: {fileID: 0}
   healingPotion: {fileID: 4156208400234835991, guid: 81f79dfdd0a726341b17be9ca06959ef, type: 3}
   room:
   - {fileID: 955211854}
