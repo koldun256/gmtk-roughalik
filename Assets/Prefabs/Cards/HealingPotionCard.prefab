@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3574483036373368004
+--- !u!1 &7558083322191893626
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3077651870026908632}
-  - component: {fileID: 7904604705565120699}
-  - component: {fileID: 8783154508047514153}
-  - component: {fileID: 796169321291483207}
+  - component: {fileID: 3056508246973113211}
+  - component: {fileID: 7480940382883076100}
+  - component: {fileID: 8510803259885732523}
+  - component: {fileID: 8921669604415564229}
   m_Layer: 5
-  m_Name: slime_card
+  m_Name: HealingPotionCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &3077651870026908632
+--- !u!224 &3056508246973113211
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3574483036373368004}
+  m_GameObject: {fileID: 7558083322191893626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 23.170517}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -39,28 +39,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7904604705565120699
+--- !u!222 &7480940382883076100
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3574483036373368004}
+  m_GameObject: {fileID: 7558083322191893626}
   m_CullTransparentMesh: 1
---- !u!114 &8783154508047514153
+--- !u!114 &8510803259885732523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3574483036373368004}
+  m_GameObject: {fileID: 7558083322191893626}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25490198, g: 0.7254902, b: 0.23529412, a: 1}
+  m_Color: {r: 1, g: 0.03126264, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -77,19 +77,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &796169321291483207
+--- !u!114 &8921669604415564229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3574483036373368004}
+  m_GameObject: {fileID: 7558083322191893626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c84f561a77e48748a5fa4941a05ed41, type: 3}
+  m_Script: {fileID: 11500000, guid: 51498274da7c2854b9873b7f47dcf16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapContainerUI: {fileID: 0}
-  color: {r: 0.25490198, g: 0.7254902, b: 0.23529412, a: 1}
+  color: {r: 1, g: 0.03137255, b: 0, a: 1}
   originalParent: {fileID: 0}
   canvas: {fileID: 0}

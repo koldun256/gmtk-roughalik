@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Door.cs.meta
+guid: eb6bf3ce84b19854391927fb96b05459
+========
+guid: f213f15228730fd43b95188bfac7c5d9
+>>>>>>>> s3my0n:Assets/Scripts/CardGenerator.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

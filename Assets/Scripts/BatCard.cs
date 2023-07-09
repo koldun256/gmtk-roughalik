@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatCard : MonoBehaviour
+public class BatCard : Card
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        mapThing = new Bat();
+        startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

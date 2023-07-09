@@ -12,9 +12,11 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Transform originalParent;
     public Transform canvas;
 
-    void Start() {
+    void Awake() {
         startPosition = GetComponent<RectTransform>().anchoredPosition;
         mapContainerUI = GameObject.Find("map_creator").GetComponent<MapCreator>();
+        originalParent = transform.parent;
+        canvas = GameObject.Find("Canvas").transform;
     }
     public void OnBeginDrag(PointerEventData eventData) {
         gameObject.transform.parent = canvas;

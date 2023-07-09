@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpearCard : Card
+public class HealingPotionCard : Card
 {
     void Start()
     {
-        mapThing = new Spear();
+        mapThing = new HealingPotion();
         startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

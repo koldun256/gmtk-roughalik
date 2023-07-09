@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3056508246973113211}
   - component: {fileID: 7480940382883076100}
   - component: {fileID: 8510803259885732523}
+  - component: {fileID: -8929720572149466265}
   m_Layer: 5
   m_Name: GolemCard
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25490198, g: 0.7254902, b: 0.23529412, a: 1}
+  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -76,3 +77,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-8929720572149466265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558083322191893626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b080fe6675b6df4aa3d6719d4d01afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+  originalParent: {fileID: 0}
+  canvas: {fileID: 0}

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25490198, g: 0.7254902, b: 0.23529412, a: 1}
+  m_Color: {r: 0.904, g: 1, b: 0.9, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -89,7 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c84f561a77e48748a5fa4941a05ed41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapContainerUI: {fileID: 0}
-  color: {r: 0.25490198, g: 0.7254902, b: 0.23529412, a: 1}
+  color: {r: 0.90588236, g: 1, b: 0.9019608, a: 1}
   originalParent: {fileID: 0}
   canvas: {fileID: 0}
