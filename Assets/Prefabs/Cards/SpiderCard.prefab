@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7480940382883076100}
   - component: {fileID: 8510803259885732523}
   - component: {fileID: 211091203324763550}
+  - component: {fileID: 3445731508051168354}
   m_Layer: 5
   m_Name: SpiderCard
   m_TagString: Untagged
@@ -92,3 +93,17 @@ MonoBehaviour:
   color: {r: 0.32156864, g: 0.52156866, b: 0.85882354, a: 1}
   originalParent: {fileID: 0}
   canvas: {fileID: 0}
+--- !u!114 &3445731508051168354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558083322191893626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
