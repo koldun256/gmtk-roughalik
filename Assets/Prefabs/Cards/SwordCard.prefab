@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e648d15f087a83d4facca91d669aa27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0.8666667, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   originalParent: {fileID: 0}
   canvas: {fileID: 0}
   costText: {fileID: 7154800430449226877}

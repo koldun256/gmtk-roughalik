@@ -226,10 +226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b080fe6675b6df4aa3d6719d4d01afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   originalParent: {fileID: 0}
   canvas: {fileID: 0}
-  moneyCost: 0
   costText: {fileID: 7863987884021969285}
   moneyCost: 0
 --- !u!114 &-8990832247821499759

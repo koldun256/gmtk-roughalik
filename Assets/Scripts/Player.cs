@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         GameObject closestLoot = null;
         minDistance = 99999f;
         foreach(Transform child in room.transform) {
-           if(child.tag == "Loot") {
+           if(child.gameObject.tag == "Loot") {
                var distance = Vector2.Distance(gameObject.transform.localPosition, child.transform.localPosition);
                if(distance < minDistance) {
                     closestLoot = child.gameObject;
