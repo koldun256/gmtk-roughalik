@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Cards.meta
 guid: 0bc0d865b1fcbe4489a9e093e757efc6
+========
+guid: ff0020ec4b6ed8a438d893ddd4ae33ed
+>>>>>>>> egor:Assets/Cards.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
