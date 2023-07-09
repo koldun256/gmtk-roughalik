@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7728214208600042424}
   - component: {fileID: 5820724663764012343}
   m_Layer: 0
-  m_Name: golem
+  m_Name: Golem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8256974941621231957}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.6249583, y: -19.501455, z: -25.055397}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1120e357676474382af12bd8aa00e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.1
   room: {fileID: 0}
   weapon: {fileID: 4819069311116515982}
 --- !u!212 &4427599119731655711
@@ -116,9 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 120
-  range: 1
-  lastAttackTime: 0
+  range: 0.1
   attackDelay: 5
+  lastAttackTime: 0
 --- !u!114 &7728214208600042424
 MonoBehaviour:
   m_ObjectHideFlags: 0

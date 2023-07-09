@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8093569972811559550}
   - component: {fileID: 5306176932869240247}
   - component: {fileID: 7087438388267560011}
+  - component: {fileID: -364315254824692833}
   m_Layer: 0
   m_Name: spider
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7066006994376673444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49224734, y: -2.198182, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1120e357676474382af12bd8aa00e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.2
   room: {fileID: 0}
   weapon: {fileID: 0}
 --- !u!114 &8093569972811559550
@@ -130,9 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  range: 1
-  lastAttackTime: 0
+  range: 0.1
   attackDelay: 1
+  lastAttackTime: 0
 --- !u!95 &7087438388267560011
 Animator:
   serializedVersion: 5
@@ -154,3 +155,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-364315254824692833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066006994376673444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331dbd2f8e26f024fa4d64b3e1b4f8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 1.2
