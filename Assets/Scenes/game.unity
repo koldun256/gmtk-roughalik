@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6bf3ce84b19854391927fb96b05459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomManager: {fileID: 0}
+  roomManager: {fileID: 963194229}
 --- !u!61 &173846001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1712,7 +1712,7 @@ MonoBehaviour:
   - {fileID: 151203710}
   - {fileID: 227700456}
   activeRoom: 0
-  camera: {fileID: 0}
+  camera: {fileID: 963194228}
   player: {fileID: 1965674006}
 --- !u!114 &963194230
 MonoBehaviour:
@@ -2029,7 +2029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6bf3ce84b19854391927fb96b05459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomManager: {fileID: 0}
+  roomManager: {fileID: 963194229}
 --- !u!61 &1420385556
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2847,7 +2847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6bf3ce84b19854391927fb96b05459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomManager: {fileID: 0}
+  roomManager: {fileID: 963194229}
 --- !u!61 &1981468030
 BoxCollider2D:
   m_ObjectHideFlags: 0

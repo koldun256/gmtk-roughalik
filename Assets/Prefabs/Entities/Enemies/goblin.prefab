@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 70
-  maxHealth: 100
+  maxHealth: 70
 --- !u!114 &760598965475109642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be22d06ff6d206b4b974d62e25fcafc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
-  range: 2
+  damage: 20
+  range: 0.3
   lastAttackTime: 0
   attackDelay: 0.5

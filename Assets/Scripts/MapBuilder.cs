@@ -34,6 +34,10 @@ public class MapBuilder : MonoBehaviour {
                     }
                     else if (a is HealingPotion){
                         newPrefab = healingPotion;
+                    } else if (a is Golem) {
+                        newPrefab = golem;
+                    } else if (a is Bat) {
+                        newPrefab = bat;
                     }
                     Debug.Log(i);
                     rooms[i].Place(newPrefab, l, j);
