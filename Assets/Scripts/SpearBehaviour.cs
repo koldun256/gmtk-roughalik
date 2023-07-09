@@ -11,7 +11,7 @@ public class SpearBehaviour : WeaponBehaviour
         damage = spear.damage; range = spear.range;
     }
 
-    public void Attack(GameObject target)
+    public override void Attack(GameObject target)
     {
         if (Time.time - lastAttackTime >= attackDelay)
         {

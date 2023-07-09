@@ -11,7 +11,7 @@ public class SpiderWeaponBehaviour : WeaponBehaviour
         damage = spiderWeapon.damage; range = spiderWeapon.range;
     }
 
-    public void Attack(GameObject target)
+    public override void Attack(GameObject target)
     {
         if (Time.time - lastAttackTime >= attackDelay)
         {

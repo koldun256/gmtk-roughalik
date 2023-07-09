@@ -11,7 +11,7 @@ public class SlimeWeaponBehaviour : WeaponBehaviour
         damage = slimeWepon.damage; range = slimeWepon.range;
     }
 
-    public void Attack(GameObject target)
+    public override void Attack(GameObject target)
     {
         if (Time.time - lastAttackTime >= attackDelay)
         {
