@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6654585493319073196}
   - component: {fileID: 6366446553012235997}
   - component: {fileID: 8914101054428870163}
+  - component: {fileID: 4171101972796898704}
+  - component: {fileID: 4667665334303276725}
   m_Layer: 0
   m_Name: spider
   m_TagString: Enemy
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4156208400234835991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3628077433089592150}
@@ -100,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1120e357676474382af12bd8aa00e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.3
   room: {fileID: 0}
   weapon: {fileID: 0}
 --- !u!114 &6366446553012235997
@@ -116,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 90
-  maxHealth: 100
+  maxHealth: 90
   healthBar: {fileID: 7417284512304669989}
 --- !u!114 &8914101054428870163
 MonoBehaviour:
@@ -132,8 +134,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   range: 0.1
-  lastAttackTime: 0
   attackDelay: 1
+  lastAttackTime: 0
+--- !u!95 &4171101972796898704
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b0875aca6253054f8e76a7ea9044e8b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4667665334303276725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331dbd2f8e26f024fa4d64b3e1b4f8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 0.5
 --- !u!1001 &7988182636757197684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,12 +187,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.252
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0675
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1
+      value: -0.247
       objectReference: {fileID: 0}
     - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
       propertyPath: m_LocalPosition.z
