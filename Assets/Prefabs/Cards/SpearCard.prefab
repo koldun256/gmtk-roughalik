@@ -244,3 +244,6 @@ MonoBehaviour:
   originalParent: {fileID: 0}
   canvas: {fileID: 0}
   costText: {fileID: 8469233769157567930}
+  damage: 60
+  range: 0.25
+  attackTime: 0.75

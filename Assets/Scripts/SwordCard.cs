@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class SwordCard : Card
 {
+    public int damage;
+    public float range;
+    public float attackTime;
     void Start()
     {
-        mapThing = new Sword();
-        mapThing.moneyCost = -1;
+        var sword = new Sword();
+        sword.range = range;
+        sword.damage = damage;
+        sword.attackTime = attackTime;
+        mapThing = sword;
+        mapThing.moneyCost = -2;
         startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

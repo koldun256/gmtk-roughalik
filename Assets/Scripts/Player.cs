@@ -33,7 +33,7 @@ class LootDecision : Decision {
 }
 public class Player : MonoBehaviour
 {
-    public GameObject room;
+    public RoomManager roomManager;
     public WeaponBehaviour weapon;
     public float speed = 1;
     void Start() {
@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     }
 
     Decision MakeDecision() {
+        Room room = roomManager.rooms[roomManager.activeRoom];
         GameObject closestEnemy = null;
         float minDistance = 99999f;
         foreach(Transform child in room.transform) {
@@ -78,7 +79,7 @@ public class Player : MonoBehaviour
            }
         }
         if(!(closestLoot is null)) {
-            if(minDistance <= 0.5f){
+            if(minDistance <= 0.05f){
                 return new LootDecision(closestLoot);
             } else {
                 return new MoveDecision(closestLoot.transform.localPosition);
@@ -89,6 +90,7 @@ public class Player : MonoBehaviour
     }
 
     void Update() {
+        Room room = roomManager.rooms[roomManager.activeRoom];
         MakeDecision().Do(this, room.GetComponent<Room>());
     }
 }
