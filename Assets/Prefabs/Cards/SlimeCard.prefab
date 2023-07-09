@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7480940382883076100}
   - component: {fileID: 8510803259885732523}
   - component: {fileID: 211091203324763550}
+  - component: {fileID: -3747873882822305873}
   m_Layer: 5
   m_Name: SlimeCard
   m_TagString: Untagged
@@ -89,7 +90,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c84f561a77e48748a5fa4941a05ed41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapContainerUI: {fileID: 0}
   color: {r: 0.25490198, g: 0.7254902, b: 0.23529412, a: 1}
   originalParent: {fileID: 0}
   canvas: {fileID: 0}
+--- !u!114 &-3747873882822305873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7558083322191893626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
