@@ -7,6 +7,7 @@ public class RoomManager : MonoBehaviour {
     public Room[] rooms;
     public int activeRoom;
     public Transform camera;
+    public GameObject player;
 
     public void SetRoom(int id) {
         if(id == 3) SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex );
@@ -14,6 +15,7 @@ public class RoomManager : MonoBehaviour {
             room.gameObject.SetActive(false);
         }
         rooms[id].gameObject.SetActive(true);
+        rooms[id].PlacePlayer(player);
         activeRoom = id;
         camera.position = rooms[id].gameObject.transform.position + Vector3.back;
     }
