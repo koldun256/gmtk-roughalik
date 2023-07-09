@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6237470776257688460}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,9 +31,10 @@ Transform:
   m_LocalPosition: {x: 533.5281, y: -84.53339, z: -25.055397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6611671936433722068}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4724896964200659238
 MonoBehaviour:
@@ -131,4 +132,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 300
+  maxHealth: 120
+  healthBar: {fileID: 1114528054413802663}
+--- !u!1001 &523363564639795958
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8927261039295701862}
+    m_Modifications:
+    - target: {fileID: 3197437063478256501, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_Name
+      value: health_bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.603
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+--- !u!114 &1114528054413802663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 591314329110185553, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+  m_PrefabInstance: {fileID: 523363564639795958}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95853cf5d718214fbb5bc2911992ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6611671936433722068 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
+  m_PrefabInstance: {fileID: 523363564639795958}
+  m_PrefabAsset: {fileID: 0}
