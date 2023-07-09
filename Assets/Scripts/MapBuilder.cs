@@ -5,7 +5,9 @@ class MapBuilder : MonoBehaviour {
     public GameObject slime;
     public GameObject spear;
     public GameObject goblin;
+    public GameObject golem;
     public GameObject spider;
+    public GameObject bat;
     public GameObject healingPotion;
     public Room[] rooms;
     void Start() {

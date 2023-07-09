@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     protected MapCreator mapContainerUI;
@@ -11,8 +12,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     protected MapThing mapThing;
     public Transform originalParent;
     public Transform canvas;
-    public int moneyCost;
-
+    public TMP_Text costText;
+    
     void Awake() {
         startPosition = GetComponent<RectTransform>().anchoredPosition;
         mapContainerUI = GameObject.Find("map_creator").GetComponent<MapCreator>();
@@ -23,6 +24,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         gameObject.transform.parent = canvas;
         GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
         GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
+    }
+    void Update() {
+        if (costText.text == "0") costText.text = mapThing.moneyCost.ToString();
     }
     public void OnDrag(PointerEventData data) {
         RectTransform rectTransform = GetComponent<RectTransform>();
