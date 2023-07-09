@@ -6,8 +6,9 @@ public class SwordBehaviour : WeaponBehaviour
 {
     public float lastAttackTime = 0f;
     public void SetData(Sword sword) { 
-        attackDelay = 0.5f;
-        damage = sword.damage; range = sword.range;
+        attackDelay = sword.attackTime;
+        damage = sword.damage;
+        range = sword.range;
     }
     public override void Attack(GameObject target) {
         if (Time.time - lastAttackTime >= attackDelay) {

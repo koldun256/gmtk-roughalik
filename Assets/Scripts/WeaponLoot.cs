@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class WeaponLoot : LootBehaviour
 {
-    public WeaponBehaviour weapon;
-    public void OnPickUp(Player player){
-        player.ChangeWeapon(weapon);
+    public Weapon weapon;
+    public override void OnPickUp(Player player) {
+        WeaponBehaviour weaponBehaviour = null;
+        if(weapon is Spear) {
+            var spearBehaviour = player.gameObject.AddComponent<SpearBehaviour>();
+            spearBehaviour.SetData(weapon as Spear);
+        }
+        if(weapon is Sword) {
+            var spearBehaviour = player.gameObject.AddComponent<SwordBehaviour>();
+            spearBehaviour.SetData(weapon as Sword);
+        }
+        player.ChangeWeapon(weaponBehaviour);
         Destroy(gameObject);
     } 
 }
