@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class WeaponBehavior : MonoBehaviour
+public class WeaponBehaviour : MonoBehaviour
 {
+    public int damage;
     public void Attack(GameObject target){
-        Debug.Log("JOPA");
+        target.GetComponent<Health>().DoDamage(damage);
     }
 }
