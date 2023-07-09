@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4377637169809005633}
   - component: {fileID: 8417005217248511323}
   m_Layer: 0
-  m_Name: bat
+  m_Name: Bat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,15 +76,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9bf91348eb5cfed44b7cccf9be577edf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b2ead9a5d7c284499947e0cc5af6929, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.63, y: 0.39}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3750671340720363002
@@ -114,7 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8860b9230db89dd4c9aa9de838332f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 90
+  health: 0
+  maxHealth: 60
 --- !u!114 &8417005217248511323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10300666c35e8c64dadeeddc33625c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 23
+  damage: 20
   range: 1
   lastAttackTime: 0.75
   attackDelay: 0.5
