@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpiderWeaponBehaviour : WeaponBehaviour
 {
-    public int damage;
-    public float range;
+    public float lastAttackTime = 0f;
+    public float attackDelay = 1f;
     public void SetData(SpiderWeapon spiderWeapon)
     {
         damage = spiderWeapon.damage; range = spiderWeapon.range;
@@ -13,6 +13,10 @@ public class SpiderWeaponBehaviour : WeaponBehaviour
 
     public void Attack(GameObject target)
     {
-        target.GetComponent<Health>().DoDamage(damage);
+        if (Time.time - lastAttackTime >= attackDelay)
+        {
+            lastAttackTime = Time.time;
+            target.GetComponent<Health>().DoDamage(damage);
+        }
     }
 }

@@ -1,46 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-interface Decision {
-    void Do(Player self, Room room);
-}
-class MoveDecision : Decision {
-    public Vector2 target;
-    public MoveDecision(Vector2 target) {
-        this.target = target;
-    }
-    public void Do(Player self, Room room) {
-        self.transform.position = Vector2.MoveTowards(self.transform.position, target, self.speed*Time.deltaTime);
-    }
-}
-class AttackDecision : Decision {
-    public GameObject target;
-    public AttackDecision(GameObject target){
-        this.target = target;
-    }
-    public void Do(Player self, Room room){
-        self.weapon.Attack(target);
-    }
-}
-class LootDecision : Decision {
-    public GameObject target;
-    public LootDecision(GameObject target){
-        this.target = target;
-    }
-    public void Do(Player self, Room room){
-    //TODO
-    }
-}
 public class Player : MonoBehaviour
 {
-    public GameObject room;
-    public WeaponBehavior weapon;
-    public float speed = 1;
-    void Start() {
-        weapon = GetComponent<WeaponBehavior>();
+    interface Decision
+    {
+        void Do(Player self, Room room);
+    }
+    class MoveDecision : Decision
+    {
+        public Vector2 target;
+        public MoveDecision(Vector2 target)
+        {
+            this.target = target;
+        }
+        public void Do(Player self, Room room)
+        {
+            self.transform.position = Vector2.MoveTowards(self.transform.position, target, self.speed * Time.deltaTime);
+        }
+    }
+    class AttackDecision : Decision
+    {
+        public GameObject target;
+        public AttackDecision(GameObject target)
+        {
+            this.target = target;
+        }
+        public void Do(Player self, Room room)
+        {
+            self.weapon.Attack(target);
+        }
+    }
+    class LootDecision : Decision
+    {
+        public GameObject target;
+        public LootDecision(GameObject target){ 
+            this.target = target;
+        }
+        public void Do(Player self, Room room){
+            target.GetComponent<LootBehaviour>().OnPickUp(self);
+        }
     }
 
-    private void ChangeWeapon(WeaponBehavior newWeapon) {
+    public GameObject room;
+    public WeaponBehaviour weapon;
+    public float speed = 1;
+    void Start() {
+        weapon = GetComponent<WeaponBehaviour>();
+    }
+
+    public void ChangeWeapon(WeaponBehaviour newWeapon) {
         Destroy(weapon);
         weapon = newWeapon;
     }

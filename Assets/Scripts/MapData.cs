@@ -66,10 +66,11 @@ public class Slime : Enemy {
     public new float attackTime = 1f;
 }
 public class Spider : Enemy {
-    public new int maxHealth = 70;
+    public new int maxHealth = 90;
     public new Weapon weapon = new SpiderWeapon();
     public new float attackTime = 1f;
 }
+
 public class Loot : MapThing {}
 public class HealingPotion : Loot {}
 
