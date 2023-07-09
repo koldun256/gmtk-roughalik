@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1461814160034260904}
   m_Layer: 0
   m_Name: sword
-  m_TagString: Weapon
+  m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,5 +113,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   range: 1
-  lastAttackTime: 0
   attackDelay: 0.5
+  lastAttackTime: 0

@@ -8,64 +8,33 @@ public class MapThing {
 public class Weapon : MapThing {
     public int damage;
     public float range;
+    public float attackTime;
 }
 public class Empty : MapThing {}
-public class Sword : Weapon {
-    public new int damage;
-    public new float range = 1f;
-}
-public class Spear : Weapon {
-    public new int damage;
-    public new float range = 2f;
-}
-public class SlimeWeapon: Weapon{
-    public int damage;
-    public new float range = 1f;
-    public SlimeWeapon(int damage){
-        this.damage = damage;
-    }
-    public SlimeWeapon(){
-        this.damage = 75;
-    }
-}
-public class SpiderWeapon : Weapon{
-    public int damage;
-    public new float range = 1f;
-    public SpiderWeapon(int damage)
-    {
-        this.damage = damage;
-    }
-    public SpiderWeapon()
-    {
-        this.damage = 75;
-    }
-}
-public class Enemy : MapThing{
+public class Sword : Weapon {}
+public class Spear : Weapon {}
+public class SlimeWeapon: Weapon {}
+public class SpiderWeapon : Weapon {}
+public class Enemy : MapThing {
     public Weapon weapon;
     public int maxHealth;
-    public float attackTime;
 }
 public class Golem : Enemy
 {
-    public new int maxHealth = 300;
-    public new float attackTime = 5f;
+    public int maxHealth = 300;
 }
 public class Bat : Enemy
 {
-    public new int maxHealth = 50;
-    public new float attackTime = 0.5f;
+    public int maxHealth = 50;
 }
-    public class Goblin : Enemy {
-    public new int maxHealth = 70;
-    public new float attackTime = 0.5f;
+public class Goblin : Enemy {
+    public int maxHealth = 70;
 }
 public class Slime : Enemy {
-    public new int maxHealth = 40;
-    public new float attackTime = 1f;
+    public int maxHealth = 40;
 }
 public class Spider : Enemy {
-    public new int maxHealth = 90;
-    public new float attackTime = 0.5f;
+    public int maxHealth = 90;
 }
 
 public class Loot : MapThing {

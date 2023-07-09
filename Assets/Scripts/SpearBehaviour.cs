@@ -8,7 +8,9 @@ public class SpearBehaviour : WeaponBehaviour
     public float attackDelay = 0.5f;
     public void SetData(Spear spear)
     {
-        damage = spear.damage; range = spear.range;
+        attackDelay = spear.attackTime;
+        damage = spear.damage;
+        range = spear.range;
     }
 
     public override void Attack(GameObject target)

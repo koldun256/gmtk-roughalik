@@ -19,9 +19,11 @@ public class MapBuilder : MonoBehaviour {
                     GameObject newPrefab = null;
                     if (a is Sword){
                         newPrefab = sword;
+                        newPrefab.GetComponent<WeaponLoot>().weapon = a as Weapon;
                     }
                     else if (a is Spear){
                         newPrefab = spear;
+                        newPrefab.GetComponent<WeaponLoot>().weapon = a as Weapon;
                     }
                     if (a is Spider){
                         newPrefab = spider;
@@ -39,8 +41,10 @@ public class MapBuilder : MonoBehaviour {
                     } else if (a is Bat) {
                         newPrefab = bat;
                     }
-                    Debug.Log(i);
-                    rooms[i].Place(newPrefab, l, j);
+                    var newObj = rooms[i].Place(newPrefab, l, j);
+                    if(a is Weapon) {
+                        newObj.GetComponent<WeaponLoot>().weapon = a as Weapon;
+                    }
                 }
             }
         }
