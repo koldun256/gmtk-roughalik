@@ -10,7 +10,7 @@ class MoveDecision : Decision {
         this.target = target;
     }
     public void Do(Player self, Room room) {
-        self.transform.position = Vector2.MoveTowards(self.transform.position, target, self.speed*Time.deltaTime);
+        self.transform.localPosition = Vector2.MoveTowards(self.transform.localPosition, target, self.speed * Time.deltaTime);
     }
 }
 class AttackDecision : Decision {
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         float minDistance = 99999f;
         foreach(Transform child in room.transform) {
            if(child.gameObject.tag == "Enemy") {
-               var distance = Vector2.Distance(gameObject.transform.position, child.transform.position);
+               var distance = Vector2.Distance(gameObject.transform.localPosition, child.transform.localPosition);
                if(distance < minDistance) {
                     closestEnemy = child.gameObject;
                     minDistance = distance;
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
             if(minDistance <= weapon.range) {
                 return new AttackDecision(closestEnemy);
             } else {
-                return new MoveDecision(closestEnemy.transform.position);
+                return new MoveDecision(closestEnemy.transform.localPosition);
             }
         }
 
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
         minDistance = 99999f;
         foreach(Transform child in room.transform) {
            if(child.tag == "Loot") {
-               var distance = Vector2.Distance(gameObject.transform.position, child.transform.position);
+               var distance = Vector2.Distance(gameObject.transform.localPosition, child.transform.localPosition);
                if(distance < minDistance) {
                     closestLoot = child.gameObject;
                     minDistance = distance;
@@ -81,11 +81,11 @@ public class Player : MonoBehaviour
             if(minDistance <= 0.5f){
                 return new LootDecision(closestLoot);
             } else {
-                return new MoveDecision(closestLoot.transform.position);
+                return new MoveDecision(closestLoot.transform.localPosition);
             }
         }
 
-        return new MoveDecision(new Vector2(7f, 3.5f));
+        return new MoveDecision(new Vector2(0.5833f, 0f));
     }
 
     void Update() {

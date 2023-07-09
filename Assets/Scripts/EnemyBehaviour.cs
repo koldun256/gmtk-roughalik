@@ -21,7 +21,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
         public void Do(EnemyBehaviour self, Room room)
         {
-            self.transform.position = Vector2.MoveTowards(self.transform.position, target, self.speed * Time.deltaTime);
+            self.transform.localPosition = Vector2.MoveTowards(self.transform.localPosition, target, self.speed * Time.deltaTime);
         }
     }
     class AttackDecision : Decision
@@ -38,7 +38,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     public GameObject room;
     public WeaponBehaviour weapon;
-    void Start(){
+    void Awake() {
         weapon = GetComponent<WeaponBehaviour>();
         room = gameObject.transform.parent.gameObject;
     }
@@ -48,14 +48,14 @@ public class EnemyBehaviour : MonoBehaviour
         {
             if (child.gameObject.tag == "Player")
             {
-                var distance = Vector2.Distance(gameObject.transform.position, child.position);
+                var distance = Vector2.Distance(gameObject.transform.localPosition, child.localPosition);
                 if (distance <= weapon.range)
                 {
                     return new AttackDecision(child.gameObject);
                 }
                 else
                 {
-                    return new MoveDecision(child.position);
+                    return new MoveDecision(child.localPosition);
                 }
             }
         }

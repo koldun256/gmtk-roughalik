@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Door.cs.meta
+guid: 676ec37249f529e488ab02036ba7829f
+========
 guid: f213f15228730fd43b95188bfac7c5d9
+>>>>>>>> s3my0n:Assets/Scripts/CardGenerator.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
