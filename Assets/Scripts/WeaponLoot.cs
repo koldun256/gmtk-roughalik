@@ -10,10 +10,12 @@ public class WeaponLoot : LootBehaviour
         if(weapon is Spear) {
             var spearBehaviour = player.gameObject.AddComponent<SpearBehaviour>();
             spearBehaviour.SetData(weapon as Spear);
+            weaponBehaviour = spearBehaviour;
         }
         if(weapon is Sword) {
             var spearBehaviour = player.gameObject.AddComponent<SwordBehaviour>();
             spearBehaviour.SetData(weapon as Sword);
+            weaponBehaviour = spearBehaviour;
         }
         player.ChangeWeapon(weaponBehaviour);
         Destroy(gameObject);
