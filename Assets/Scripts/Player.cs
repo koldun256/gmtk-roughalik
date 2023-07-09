@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
            }
         }
         if(distanceToTarget != 99999f){
-            if(Vector2.Distance(gameObject.transform.position, child.transform.position) <= weapon.range){
+            if(Vector2.Distance(gameObject.transform.position, target.transform.position) <= weapon.range){
                 return new AttackDecision();
             }
             else{
