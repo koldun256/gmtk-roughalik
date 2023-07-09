@@ -9,8 +9,8 @@ class MoveDecision : Decision {
     public MoveDecision(Vector2 target) {
         this.target = target;
     }
-    void Do(Player self, Room room) {
-        self.transform.position = Vector2.MoveTowards(self.transform.position, target, self.speed*Time.deltaTime)
+    public void Do(Player self, Room room) {
+        self.transform.position = Vector2.MoveTowards(self.transform.position, target, self.speed*Time.deltaTime);
     }
 }
 class AttackDecision : Decision {
@@ -18,28 +18,28 @@ class AttackDecision : Decision {
     public AttackDecision(GameObject target){
         this.target = target;
     }
-    void Do(Player self, Room room){
+    public void Do(Player self, Room room){
         self.weapon.Attack(target);
     }
 }
 class LootDecision : Decision {
     public GameObject target;
-    public AttackDecision(GameObject target){
+    public LootDecision(GameObject target){
         this.target = target;
     }
-    void Do(Player self, GameObject target, Room room){
+    public void Do(Player self, Room room){
     //TODO
     }
 }
 public class Player : MonoBehaviour
 {
     public GameObject room;
-    private WeaponBehaviour weapon;
+    private WeaponBehavior weapon;
     public float speed = 1;
     void Start() {
-        weapon = GetComponent<WeaponBehaviour>();
+        weapon = GetComponent<WeaponBehavior>();
     }
-    private void ChangeWeapon(WeaponBehaviour newWeapon) {
+    private void ChangeWeapon(WeaponBehavior newWeapon) {
         Destroy(weapon);
         weapon = newWeapon;
     }
