@@ -8,4 +8,5 @@ public abstract class WeaponBehaviour : MonoBehaviour
     public int damage;
     public float range;
     public abstract void Attack(GameObject target);
+    public float attackDelay;
 }
