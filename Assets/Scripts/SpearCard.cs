@@ -7,6 +7,7 @@ public class SpearCard : Card
     void Start()
     {
         mapThing = new Spear();
+        mapThing.moneyCost = -2;
         startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

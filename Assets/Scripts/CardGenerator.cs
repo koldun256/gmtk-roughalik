@@ -9,7 +9,7 @@ public class CardGenerator : MonoBehaviour
     public GameObject healthCard;
     public void Start(){
         for(int i = 0; i < 4; i++){
-            GameObject card = enemyCards[Random.Range(0,enemyCards.Length)]; 
+            GameObject card = enemyCards[Random.Range(0,enemyCards.Length)];
             Instantiate(card, gameObject.transform);
         }
         for (int i = 0; i < 2; i++)

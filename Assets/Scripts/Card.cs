@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     protected MapCreator mapContainerUI;
@@ -11,7 +12,8 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     protected MapThing mapThing;
     public Transform originalParent;
     public Transform canvas;
-
+    public TMP_Text costText;
+    
     void Awake() {
         startPosition = GetComponent<RectTransform>().anchoredPosition;
         mapContainerUI = GameObject.Find("map_creator").GetComponent<MapCreator>();
@@ -23,7 +25,9 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
         GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
     }
-
+    void Update() {
+        if (costText.text == "0") costText.text = mapThing.moneyCost.ToString();
+    }
     public void OnDrag(PointerEventData data) {
         RectTransform rectTransform = GetComponent<RectTransform>();
         Vector3[] corners = mapContainerUI.roomContainers[mapContainerUI.activeId].GetCorners();
@@ -47,7 +51,7 @@ public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        if(mapPlaceholder is null) {
+        if(mapPlaceholder is null){
             GetComponent<RectTransform>().anchoredPosition = startPosition;
         } else {
             if(mapContainerUI.roomContainers[mapContainerUI.activeId].Submit(mapPlaceholder, mapThing)) {
