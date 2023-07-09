@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8914101054428870163}
   - component: {fileID: 4171101972796898704}
   - component: {fileID: 4667665334303276725}
+  - component: {fileID: 5533883789652286357}
   m_Layer: 0
   m_Name: spider
   m_TagString: Enemy
@@ -170,6 +171,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scale: 0.5
+--- !u!114 &5533883789652286357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9651771a7d8475049baaab449b9126aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeAttackDamage: 50
+  room: {fileID: 0}
 --- !u!1001 &7988182636757197684
 PrefabInstance:
   m_ObjectHideFlags: 0
