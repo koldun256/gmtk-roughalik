@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MapCreator : MonoBehaviour {
     public RoomContainerUI[] roomContainers;
-    public MapBuilder mapBuilder;
     private MapData mapData;
+    public MapBuilder mapBuilder;
     public int activeId = 0;
     private RectTransform rectTransform;
     void Start() {
