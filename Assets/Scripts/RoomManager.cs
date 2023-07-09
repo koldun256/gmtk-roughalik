@@ -13,7 +13,7 @@ public class RoomManager : MonoBehaviour {
         }
         rooms[id].gameObject.SetActive(true);
         activeRoom = id;
-        camera.position = rooms[id].gameObject.Transform.position + Vector3.back;
+        camera.position = rooms[id].gameObject.transform.position + Vector3.back;
     }
     void Start() {
         SetRoom(0);

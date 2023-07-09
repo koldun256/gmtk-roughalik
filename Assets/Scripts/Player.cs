@@ -28,7 +28,7 @@ class LootDecision : Decision {
         this.target = target;
     }
     public void Do(Player self, Room room){
-    //TODO
+        target.GetComponent<LootBehaviour>().OnPickUp(self);
     }
 }
 public class Player : MonoBehaviour
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         weapon = GetComponent<WeaponBehaviour>();
     }
 
-    private void ChangeWeapon(WeaponBehaviour newWeapon) {
+    public void ChangeWeapon(WeaponBehaviour newWeapon) {
         Destroy(weapon);
         weapon = newWeapon;
     }

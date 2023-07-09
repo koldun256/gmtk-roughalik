@@ -6,7 +6,7 @@ public class GoblinCard : Card
 {
     void Start()
     {
-        mapThing = new Slime();
+        mapThing = new Goblin();
         startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }
