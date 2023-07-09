@@ -9,6 +9,5 @@ public class GoblinCard : Card
     {
         mapThing = new Goblin();
         mapThing.moneyCost = 1;
-        startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

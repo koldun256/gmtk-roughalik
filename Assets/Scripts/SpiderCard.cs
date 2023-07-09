@@ -8,6 +8,5 @@ public class SpiderCard : Card
     {
         mapThing = new Spider();
         mapThing.moneyCost = 2;
-        startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

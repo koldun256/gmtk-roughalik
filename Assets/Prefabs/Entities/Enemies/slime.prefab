@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1917405550688398510}
   - component: {fileID: 875306916312581035}
   - component: {fileID: 4480335836292141681}
+  - component: {fileID: 4759903176762362652}
+  - component: {fileID: 2252267647284704447}
   m_Layer: 0
   m_Name: slime
   m_TagString: Enemy
@@ -132,8 +134,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   range: 0.1
-  lastAttackTime: 0
   attackDelay: 0.5
+  lastAttackTime: 0
+--- !u!95 &4759903176762362652
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa5137c1a0626af489ddb79b0a5f43dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2252267647284704447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331dbd2f8e26f024fa4d64b3e1b4f8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 0.8
 --- !u!1001 &3166749250384969790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -156,19 +192,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.18112502
       objectReference: {fileID: 0}
     - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.0445625
       objectReference: {fileID: 0}
     - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.551
+      value: -0.113
       objectReference: {fileID: 0}
     - target: {fileID: 6665957447333685282, guid: aca6e8b2a0d3c164eaf64810c9f11796, type: 3}
       propertyPath: m_LocalPosition.z

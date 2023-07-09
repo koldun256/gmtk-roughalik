@@ -9,6 +9,5 @@ public class GolemCard : Card
     {
         mapThing = new Golem();
         mapThing.moneyCost = 3;
-        startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }

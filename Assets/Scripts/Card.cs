@@ -5,66 +5,88 @@ using UnityEngine.UI;
 using TMPro;
 
 public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
-    protected MapCreator mapContainerUI;
-    public Color color;
-    private Placeholder mapPlaceholder;
-    protected Vector2 startPosition;
-    protected MapThing mapThing;
+    protected MapCreator mapCreator;
+    public MapThing mapThing;
     public Transform originalParent;
     public Transform canvas;
     public TMP_Text costText;
+    public RectTransform rectTransform;
+    public bool isOnMap = false;
     
     void Awake() {
-        startPosition = GetComponent<RectTransform>().anchoredPosition;
-        mapContainerUI = GameObject.Find("map_creator").GetComponent<MapCreator>();
+        mapCreator = GameObject.Find("map_creator").GetComponent<MapCreator>();
+        rectTransform = GetComponent<RectTransform>();
         originalParent = transform.parent;
         canvas = GameObject.Find("Canvas").transform;
     }
-    public void OnBeginDrag(PointerEventData eventData) {
-        gameObject.transform.parent = canvas;
-        GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
-        GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
-    }
+    
     void Update() {
         if (costText.text == "0") costText.text = mapThing.moneyCost.ToString();
     }
-    public void OnDrag(PointerEventData data) {
-        RectTransform rectTransform = GetComponent<RectTransform>();
-        Vector3[] corners = mapContainerUI.roomContainers[mapContainerUI.activeId].GetCorners();
-        bool isAboveMap =   data.position.x > corners[0].x &&
-                            data.position.x < corners[2].x &&
-                            data.position.y > corners[0].y &&
-                            data.position.y < corners[2].y;
-        if(isAboveMap && mapPlaceholder is null) {
-            mapPlaceholder = mapContainerUI.roomContainers[mapContainerUI.activeId].CreatePlaceholder(color, data.position);
-            GetComponent<Image>().color = new Color(0,0,0,0);
-        }
-        if(!isAboveMap && !(mapPlaceholder is null)) {
-            Destroy(mapPlaceholder.gameObject);
-            mapPlaceholder = null;
-            GetComponent<Image>().color = Color.white;
 
+    private void EnterMap() {
+        rectTransform.pivot = Vector2.zero;
+        mapCreator.roomContainers[mapCreator.activeId].Attach(gameObject);
+        isOnMap = true;
+    }
+
+    private void ExitMap() {
+        rectTransform.parent = canvas;
+        rectTransform.anchorMin = Vector2.zero;
+        rectTransform.anchorMax = Vector2.zero;
+        rectTransform.pivot = Vector2.one / 2;
+        isOnMap = false;
+    }
+
+    private bool IsAboveMap(RoomContainerUI room, Vector2 mousePosition) {
+        Vector3[] corners = room.GetCorners();
+        return  mousePosition.x > corners[0].x &&
+                mousePosition.x < corners[2].x &&
+                mousePosition.y > corners[0].y &&
+                mousePosition.y < corners[2].y;
+    }
+
+    private void GoHome() {
+        BigMode();
+        rectTransform.parent = originalParent;
+        transform.parent.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(true);
+    }
+
+    private void TinyMode() {
+        costText.gameObject.SetActive(false);
+        var cellSize = mapCreator.roomContainers[mapCreator.activeId].cellSize;
+        rectTransform.sizeDelta = new Vector2(cellSize, cellSize);
+    }
+
+    private void BigMode() {
+        costText.gameObject.SetActive(true);
+    }
+
+    public void OnBeginDrag(PointerEventData eventData) {
+        if(!isOnMap) {
+            TinyMode();
+            rectTransform.pivot = Vector2.one / 2;
+            gameObject.transform.parent = canvas;
+            rectTransform.anchorMin = Vector2.zero;
+            rectTransform.anchorMax = Vector2.zero;
+        } else {
+            mapCreator.Remove(this);
         }
-        GetComponent<RectTransform>().anchoredPosition = data.position;
-        if(mapPlaceholder is null) { return; }
-        mapContainerUI.roomContainers[mapContainerUI.activeId].SetPlaceholderPosition(mapPlaceholder, data.position);
+    }
+
+    public void OnDrag(PointerEventData data) {
+        var room = mapCreator.roomContainers[mapCreator.activeId];
+        bool isAboveMap = IsAboveMap(room, data.position);
+        if(isAboveMap && !isOnMap) { EnterMap(); }
+        if(!isAboveMap && isOnMap) { ExitMap(); }
+
+        rectTransform.anchoredPosition = isOnMap
+            ? room.SnapPosition(room.TranslatePosition(data.position))
+            : data.position;
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        if(mapPlaceholder is null){
-            GetComponent<RectTransform>().anchoredPosition = startPosition;
-        } else {
-            if(mapContainerUI.roomContainers[mapContainerUI.activeId].Submit(mapPlaceholder, mapThing)) {
-                Destroy(gameObject);
-            } else {
-                Destroy(mapPlaceholder.gameObject);
-                mapPlaceholder = null;
-                GetComponent<Image>().color = color;
-                GetComponent<RectTransform>().anchoredPosition = startPosition;
-            }
-        }
-        gameObject.transform.parent = originalParent;
-        transform.parent.gameObject.SetActive(false);
-        transform.parent.gameObject.SetActive(true);
+        if(!isOnMap || !mapCreator.Submit(this)) { GoHome(); }
     }
 }

@@ -3,10 +3,8 @@ using System.Collections;
 using UnityEngine.UIElements;
 
 public class RoomContainerUI : MonoBehaviour {
-    public GameObject placeholderPrefab;
     public float cellSize;
     private RectTransform rectTransform;
-    public MapData mapData;
     public int id = 0;
     void Start() {
         rectTransform = GetComponent<RectTransform>();
@@ -17,32 +15,23 @@ public class RoomContainerUI : MonoBehaviour {
         rectTransform.GetWorldCorners(v);
         return v;
     }
-    private Vector2 TranslatePosition(Vector2 screenPosition) {
+    public Vector2 TranslatePosition(Vector2 screenPosition) {
         Vector2 bottomLeft = GetCorners()[0];
         return screenPosition - bottomLeft;
     }
-    public Placeholder CreatePlaceholder(Color color, Vector2 screenPosition) {
-        Placeholder placeholder = Instantiate(placeholderPrefab, gameObject.transform).GetComponent<Placeholder>();
-        placeholder.GetComponent<RectTransform>().sizeDelta = new Vector2(cellSize, cellSize);
-        placeholder.SetColor(color);
-        SetPlaceholderPosition(placeholder, screenPosition);
-        return placeholder;
+    public Vector2 SnapPosition(Vector2 localPosition) {
+        return new Vector2(
+            localPosition.x - (localPosition.x % cellSize),
+            localPosition.y - (localPosition.y % cellSize)
+        );
     }
-    public void SetPlaceholderPosition(Placeholder placeholder, Vector2 screenPosition) {
-        Vector2 mapPosition = TranslatePosition(screenPosition);
-        placeholder.SetPosition(new Vector2(
-            mapPosition.x - (mapPosition.x % cellSize),
-            mapPosition.y - (mapPosition.y % cellSize)
-        ));
-    }
-    public bool Submit(Placeholder placeholder, MapThing mapThing) {
-        int x = (int)((placeholder.rectTransform.anchoredPosition.x / cellSize) + 0.5f);
-        int y = (int)((placeholder.rectTransform.anchoredPosition.y / cellSize) + 0.5f);
-        Debug.Log("trying to add to " + x + " " + y);
-        if(mapData.Occupied(id, x, y)) return false;
-        mapData.AddThing(mapThing, id, x, y);
-        Debug.Log(mapThing);
-        Debug.Log(MetaMoney.CalculateMoney(mapData));
-        return true;
+    public void Attach(GameObject card) {
+        RectTransform cardTransform = card.GetComponent<RectTransform>();
+        Vector2 originalWorldPosition = cardTransform.anchoredPosition;
+        cardTransform.parent = gameObject.transform;
+        cardTransform.anchorMin = Vector2.zero;
+        cardTransform.anchorMax = Vector2.zero;
+        cardTransform.anchoredPosition = SnapPosition(TranslatePosition(originalWorldPosition));
+        cardTransform.sizeDelta = new Vector2(cellSize, cellSize);
     }
 }

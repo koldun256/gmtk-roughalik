@@ -15,6 +15,5 @@ public class SwordCard : Card
         sword.attackTime = attackTime;
         mapThing = sword;
         mapThing.moneyCost = -2;
-        startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }
