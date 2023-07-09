@@ -13,7 +13,7 @@ public class Health : MonoBehaviour {
         Debug.Log("took " + damage + " damage");
         health -= damage;
         if(!(healthBar is null)) healthBar.SetValue((float)health/(float)maxHealth);
-        if(health < 0) {
+        if(health <= 0) {
             Destroy(gameObject);
         }
     }

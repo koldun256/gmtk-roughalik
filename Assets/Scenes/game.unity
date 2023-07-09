@@ -2409,12 +2409,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sword: {fileID: 4156208400234835991, guid: 8c10fa07fe7c07e40b81faff2224bf3c, type: 3}
-  slime: {fileID: 4156208400234835991, guid: 81476c99c05ab9e458e2d6e5a8ba541f, type: 3}
+  slime: {fileID: 4156208400234835991, guid: b7ec964d1d76cd241a07c94523ee2ccf, type: 3}
   spear: {fileID: 4156208400234835991, guid: ccf21692d6e1c0b4499c111fbb229665, type: 3}
-  goblin: {fileID: 1667336751185235914, guid: 1e22c1d8d274654488dda0e5ec6dc8d9, type: 3}
-  golem: {fileID: 7936876588307264475, guid: 1172385cc760fce4c998774ee50c0215, type: 3}
-  spider: {fileID: 4156208400234835991, guid: fc58f69c9d75e1e49a5d2940ba08b49d, type: 3}
-  bat: {fileID: 4156208400234835991, guid: beab79f3e69a425499e864067b0be9ac, type: 3}
+  goblin: {fileID: 1667336751185235914, guid: cb8be567e7f40e54996b74cd33aca024, type: 3}
+  golem: {fileID: 7936876588307264475, guid: c0786f6d1bed22048bb3b21d13e31cf0, type: 3}
+  spider: {fileID: 4156208400234835991, guid: 02d3c3b35a9e8644aac5693ba6acf78c, type: 3}
+  bat: {fileID: 4156208400234835991, guid: eb05b707cc89fba42a9787af6af5b268, type: 3}
   healingPotion: {fileID: 4156208400234835991, guid: 81f79dfdd0a726341b17be9ca06959ef, type: 3}
   rooms:
   - {fileID: 566323600}
@@ -3450,7 +3450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomManager: {fileID: 963194229}
   weapon: {fileID: 1965674009}
-  speed: 0.2
+  speed: 0.3
 --- !u!212 &1965674011
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3532,6 +3532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 300
+  healthBar: {fileID: 0}
 --- !u!1 &1981468026
 GameObject:
   m_ObjectHideFlags: 0
