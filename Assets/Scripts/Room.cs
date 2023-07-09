@@ -8,6 +8,6 @@ public class Room : MonoBehaviour
     public void Place(GameObject newThing, int x, int y) 
     {
         newThing.transform.parent = gameObject.transform;
-        newThing.transform.position = new Vector2(-5+x*cellsize,-5+y*cellsize);
+        newThing.transform.position = new Vector2(-5+x*cellsize+0.5f,-5+y*cellsize+0.5f);
     }
 }
