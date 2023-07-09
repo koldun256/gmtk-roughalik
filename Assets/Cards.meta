@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs/Cards.meta
-guid: ce60986f6d7b5ee47bfb804068ca4bb5
+<<<<<<<< HEAD:Assets/Prefabs/Cards/BatCard.prefab.meta
+guid: d8a5f02eb6a7b7d4c83992c18768a261
+PrefabImporter:
 ========
 guid: ff0020ec4b6ed8a438d893ddd4ae33ed
->>>>>>>> egor:Assets/Cards.meta
 folderAsset: yes
 DefaultImporter:
+>>>>>>>> egor:Assets/Cards.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
