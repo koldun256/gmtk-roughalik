@@ -16,7 +16,7 @@ public class Health : MonoBehaviour {
         if(!(healthBar is null)) healthBar.SetValue((float)health/(float)maxHealth);
         if(health <= 0) {
             if(gameObject.tag == "Player") {
-                SceneManagement.LoadScene("GameWinningScene");
+                SceneManager.LoadScene("GameOverScene");
             }
             Destroy(gameObject);
         }
