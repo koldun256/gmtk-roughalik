@@ -34,13 +34,13 @@ class LootDecision : Decision {
 public class Player : MonoBehaviour
 {
     public GameObject room;
-    public WeaponBehavior weapon;
+    public WeaponBehaviour weapon;
     public float speed = 1;
     void Start() {
-        weapon = GetComponent<WeaponBehavior>();
+        weapon = GetComponent<WeaponBehaviour>();
     }
 
-    private void ChangeWeapon(WeaponBehavior newWeapon) {
+    private void ChangeWeapon(WeaponBehaviour newWeapon) {
         Destroy(weapon);
         weapon = newWeapon;
     }
