@@ -7,7 +7,7 @@ public class Health : MonoBehaviour {
     public void DoDamage(int damage) {
         health -= damage;
         if(health < 0) {
-            Destory(gameObject);
+            Destroy(gameObject);
         }
     }
 }
