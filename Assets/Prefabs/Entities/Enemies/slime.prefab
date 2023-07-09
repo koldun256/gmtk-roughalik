@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3762690844084134804}
   - component: {fileID: 1917405550688398510}
   - component: {fileID: 875306916312581035}
-  - component: {fileID: 4480335836292141681}
   - component: {fileID: 4759903176762362652}
   - component: {fileID: 2252267647284704447}
+  - component: {fileID: 414836373605258615}
   m_Layer: 0
   m_Name: slime
   m_TagString: Enemy
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.2
   room: {fileID: 0}
-  weapon: {fileID: 4480335836292141681}
+  weapon: {fileID: 414836373605258615}
 --- !u!114 &875306916312581035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,22 +120,6 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   healthBar: {fileID: 4102423753505657124}
---- !u!114 &4480335836292141681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4156208400234835991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63670ac8b60feab45988821261ec1960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 30
-  range: 0.1
-  attackDelay: 0.5
-  lastAttackTime: 0
 --- !u!95 &4759903176762362652
 Animator:
   serializedVersion: 5
@@ -170,6 +154,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scale: 0.8
+--- !u!114 &414836373605258615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156208400234835991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10300666c35e8c64dadeeddc33625c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  range: 0.1
+  attackDelay: 0.7
+  lastAttackTime: 0
 --- !u!1001 &3166749250384969790
 PrefabInstance:
   m_ObjectHideFlags: 0

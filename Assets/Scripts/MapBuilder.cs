@@ -18,6 +18,7 @@ public class MapBuilder : MonoBehaviour {
                     if (a is Empty) continue;
                     GameObject newPrefab = null;
                     if (a is Sword){
+
                         newPrefab = sword;
                         newPrefab.GetComponent<WeaponLoot>().weapon = a as Weapon;
                     }

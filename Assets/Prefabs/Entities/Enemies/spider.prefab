@@ -12,10 +12,8 @@ GameObject:
   - component: {fileID: 3762690844084134804}
   - component: {fileID: 6654585493319073196}
   - component: {fileID: 6366446553012235997}
-  - component: {fileID: 8914101054428870163}
   - component: {fileID: 4171101972796898704}
-  - component: {fileID: 4667665334303276725}
-  - component: {fileID: 5533883789652286357}
+  - component: {fileID: 2139977604682808793}
   m_Layer: 0
   m_Name: spider
   m_TagString: Enemy
@@ -105,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.3
   room: {fileID: 0}
-  weapon: {fileID: 0}
+  weapon: {fileID: 2139977604682808793}
 --- !u!114 &6366446553012235997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,22 +119,6 @@ MonoBehaviour:
   health: 90
   maxHealth: 90
   healthBar: {fileID: 7417284512304669989}
---- !u!114 &8914101054428870163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4156208400234835991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b45cfb1196deff54abb8f37abf080d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 30
-  range: 0.1
-  attackDelay: 1
-  lastAttackTime: 0
 --- !u!95 &4171101972796898704
 Animator:
   serializedVersion: 5
@@ -158,7 +140,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4667665334303276725
+--- !u!114 &2139977604682808793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,24 +149,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4156208400234835991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331dbd2f8e26f024fa4d64b3e1b4f8b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 10300666c35e8c64dadeeddc33625c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale: 0.5
---- !u!114 &5533883789652286357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4156208400234835991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9651771a7d8475049baaab449b9126aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rangeAttackDamage: 50
-  room: {fileID: 0}
+  damage: 40
+  range: 0.1
+  attackDelay: 0.8
+  lastAttackTime: 0
 --- !u!1001 &7988182636757197684
 PrefabInstance:
   m_ObjectHideFlags: 0

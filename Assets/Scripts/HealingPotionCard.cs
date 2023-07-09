@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HealingPotionCard : Card
 {
-    public int moneyCost = -2;
+    public int moneyCost = -3;
     void Start()
     {
         mapThing = new HealingPotion();
-        mapThing.moneyCost = -2;
+        mapThing.moneyCost = -3;
         startPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 }
