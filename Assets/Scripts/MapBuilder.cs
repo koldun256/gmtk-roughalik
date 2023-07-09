@@ -1,6 +1,6 @@
 using UnityEngine;
 
-class MapBuilder : MonoBehaviour {
+public class MapBuilder : MonoBehaviour {
     public GameObject sword;
     public GameObject slime;
     public GameObject spear;
@@ -10,12 +10,8 @@ class MapBuilder : MonoBehaviour {
     public GameObject bat;
     public GameObject healingPotion;
     public Room[] rooms;
-    void Start() {
-        MapData fakeMapData = new MapData();
-        fakeMapData.AddThing(new Slime(), 0, 5, 5);
-        CreateMap(fakeMapData);
-    }
     public void CreateMap(MapData mapData) {
+        Debug.Log(mapData.GetThing(0,0,0));
         for (int i = 0;i < 3; i++){
             for (int l = 0;l < 6; l++){
                 for (int j = 0;j < 6; j++){

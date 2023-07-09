@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapCreator : MonoBehaviour {
     public RoomContainerUI[] roomContainers;
+    public MapBuilder mapBuilder;
     private MapData mapData;
     public int activeId = 0;
     private RectTransform rectTransform;
@@ -13,6 +14,7 @@ public class MapCreator : MonoBehaviour {
         var id = 0;
         foreach (var roomContainer in roomContainers) {
             roomContainer.id = id++;
+            roomContainer.mapData = mapData;
         }
     }
     public void Left() {
@@ -28,5 +30,8 @@ public class MapCreator : MonoBehaviour {
     private void SetPosition() {
         rectTransform.anchorMin = new Vector2(-activeId, 0);
         rectTransform.anchorMax = new Vector2(3-activeId, 1);
+    }
+    public void Create() {
+        mapBuilder.CreateMap(mapData);
     }
 }

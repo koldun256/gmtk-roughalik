@@ -6,11 +6,10 @@ public class RoomContainerUI : MonoBehaviour {
     public GameObject placeholderPrefab;
     public float cellSize;
     private RectTransform rectTransform;
-    private MapData mapData;
+    public MapData mapData;
     public int id = 0;
     void Start() {
         rectTransform = GetComponent<RectTransform>();
-        mapData = new MapData();
         cellSize = rectTransform.rect.width / 6;
     }
     public Vector3[] GetCorners() {
