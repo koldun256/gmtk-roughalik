@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
     public int health;
@@ -14,6 +15,9 @@ public class Health : MonoBehaviour {
         health -= damage;
         if(!(healthBar is null)) healthBar.SetValue((float)health/(float)maxHealth);
         if(health <= 0) {
+            if(gameObject.tag == "Player") {
+                SceneManagement.LoadScene("GameWinningScene");
+            }
             Destroy(gameObject);
         }
     }

@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     public float speed = 1;
     void Start() {
         weapon = GetComponent<WeaponBehaviour>();
+        GetComponent<Health>().health = GameObject.Find("Loader").GetComponent<Loader>().health;
     }
 
     public void ChangeWeapon(WeaponBehaviour newWeapon) {

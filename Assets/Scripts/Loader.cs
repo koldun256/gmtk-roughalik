@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Loader : MonoBehaviour
 {
-    void Start()
-    {
+    public int health = 200;
+    public int location = 0;
+    void Start() {
+        DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene("StartMenu");
     }
 }
