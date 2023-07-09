@@ -9,7 +9,6 @@ public class SwordBehaviour : WeaponBehaviour
     public void SetData(Sword sword) { 
         damage = sword.damage; range = sword.range;
     }
-
     public void Attack(GameObject target){
         if (Time.time - lastAttackTime >= attackDelay) { 
             lastAttackTime = Time.time;
